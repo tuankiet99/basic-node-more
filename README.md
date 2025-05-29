@@ -1,3 +1,3 @@
 # NOTE
 
-Phía Redis khi setup connect ta phải dùng tên service redis trong docker compose do trong container ta chạy không phải localhost mà là tên service container
+Render cloud not support multi services for mongo and redis. Use other host for them

@@ -1,13 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import { createClient } from "redis";
+import "dotenv/config";
 
 const app = express();
 const port = 3000;
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://mongo:27017/basic-database", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -15,7 +16,7 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
 // Redis Connection
-const client = createClient({ url: "redis://redis:6379" });
+const client = createClient({ url: process.env.REDIS_URL });
 client.on("error", (err) => console.log("Redis Client Error", err));
 await client.connect();
 
