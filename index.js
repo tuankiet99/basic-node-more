@@ -21,7 +21,7 @@ client.on("error", (err) => console.log("Redis Client Error", err));
 await client.connect();
 
 app.get("/", async (req, res) => {
-  res.send(`Hello from Node.js with MongoDB and Redis! I am Ki`);
+  res.send(`Hello from Node.js with MongoDB and Redis! I am a Gut Boi`);
 });
 
 app.listen(port, () => {
